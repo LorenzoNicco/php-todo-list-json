@@ -11,12 +11,18 @@
     </head>
     <body>
         <div id="app">
-            <ul>
-                <li v-for="task in taskList">{{ task.taskName }}</li>
-            </ul>
+            <main>
+                <div class="container">
+                    <h1>Todo List</h1>
+
+                    <ul>
+                        <li v-for="task in taskList">{{ task.taskName }}</li>
+                    </ul>
+                </div>
+            </main>
         </div>
         
-        <!-- Collegamento acios, vue e js -->
+        <!-- Collegamento axios, vue e js -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
