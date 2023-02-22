@@ -7,6 +7,16 @@ createApp ({
             taskList: []
         }
     },
+    methods: {
+        taskDone(task) {
+            if (task.status == false) {
+                task.status = true;
+            }
+            else if (task.status == true) {
+                task.status = false;
+            }
+        }
+    },
     created() {
         axios
         .get(this.apiUrl)

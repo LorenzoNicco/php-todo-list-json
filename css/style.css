@@ -39,3 +39,11 @@ li {
 li:not(:last-child) {
     border-bottom: 1px solid lightgray;
 }
+
+li > span {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}

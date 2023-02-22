@@ -16,7 +16,9 @@
                     <h1>Todo List</h1>
 
                     <ul>
-                        <li v-for="task in taskList">{{ task.taskName }}</li>
+                        <li v-for="task in taskList">
+                            <span v-on:click="taskDone(task)" v-bind:class="{'done':task.status == true}">{{ task.taskName }}</span>
+                        </li>
                     </ul>
                 </div>
             </main>
