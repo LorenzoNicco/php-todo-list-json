@@ -15,9 +15,6 @@
     </head>
     <body>
         <div id="app">
-            <h1>{{ message }}</h1>
-
-            <p><?php echo $message ?></p>
         </div>
         
         <!-- Collegamento acios, vue e js -->

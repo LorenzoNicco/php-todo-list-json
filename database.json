@@ -1,0 +1,32 @@
+[
+    {
+        "taskName": "HTML",
+        "whatToDo": "Scrivere la struttura HTML:5 nel file index.",
+        "status": false
+    },
+    {
+        "taskName": "CSS",
+        "whatToDo": "Aggiungere lo stile alla pagina usando le regole css nel file style.",
+        "status": false
+    },
+    {
+        "taskName": "JAVASCRIPT",
+        "whatToDo": "Scrivere le regole di vue nel file script.",
+        "status": false
+    },
+    {
+        "taskName": "VUE",
+        "whatToDo": "Inserire tutto il blocco HTML in un div con id app e corstruire la struttura createApp nel file script.",
+        "status": false
+    },
+    {
+        "taskName": "AXIOS",
+        "whatToDo": "Usare la chiamata axios per richiamare l' API.",
+        "status": false
+    },
+    {
+        "taskName": "API",
+        "whatToDo": "Scrivere la struttura API in un file script.php e i dati a cui accedere in un file database.",
+        "status": false
+    }
+]
