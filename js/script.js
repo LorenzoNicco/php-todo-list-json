@@ -4,7 +4,12 @@ createApp ({
     data () {
         return {
             apiUrl: "./script.php",
-            taskList: []
+            createUrl: "./create.php",
+            taskList: [],
+            newTask: {
+                taskName: "",
+                status: false
+            }
         }
     },
     methods: {
@@ -15,6 +20,20 @@ createApp ({
             else if (task.status == true) {
                 return task.status = false;
             }
+        },
+
+        addNewTask() {
+            console.log(this.newTask);
+            axios.post(this.createUrl, {
+                newTask: this.newTask
+            }, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then((response) => {
+                console.log(this.newTask);
+            });
         }
     },
     created() {

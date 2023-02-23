@@ -20,6 +20,12 @@
                             <span v-on:click="taskDone(task)" v-bind:class="{'done':task.status == true}">{{ task.taskName }}</span>
                         </li>
                     </ul>
+
+                    <form action="" method="POST" @submit.prevent="addNewTask()">
+                        <input type="text" name="newTaskInput" placeholder="Inserisci elemento..." v-model="newTask">
+
+                        <button type="submit">Inserisci</button>
+                    </form>
                 </div>
             </main>
         </div>
