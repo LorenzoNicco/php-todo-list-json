@@ -45,11 +45,11 @@ createApp ({
         },
 
         deleteTask(index) {
-            const taskListUpdated = this.taskList.splice(index, 1);
-            console.log("tasklistupdated", taskListUpdated);
+            const indexRemoved = this.taskList.splice(index, 1);
+            console.log("tasklistupdated", this.taskList);
 
             axios.post(this.deleteUrl, {
-                deletedTask: taskListUpdated
+                deletedTask: this.taskList
             }, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
