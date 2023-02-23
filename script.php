@@ -1,8 +1,6 @@
 <?php
-    header("Access-Control-Allow-Origin: http://127.0.0.1:5173");
-    header("Access-Control-Allow-Headers: X-Requested-With");
 
-    $databaseContentCoded = file_get_contents('database.json'); //estrazione contenuto database
+    $databaseContentCoded = file_get_contents('./database.json'); //estrazione contenuto database
     $tasks = json_decode($databaseContentCoded, true); //decodifica contenuto
 
     // costruzione response
