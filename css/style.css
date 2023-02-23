@@ -28,7 +28,7 @@ h1 {
 ul {
     list-style: none;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
 }
 
@@ -46,4 +46,27 @@ li > span {
 
 .done {
     text-decoration: line-through;
+}
+
+/* form */
+form {
+    width: 100%;
+    padding: 10px 0;
+}
+
+input {
+    width: calc(100% - 71px);
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid white;
+}
+
+button {
+    padding: 10px;
+    color: yellow;
+    background-color: transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid yellow;
 }
