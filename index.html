@@ -22,7 +22,7 @@
                     </ul>
 
                     <form action="" method="POST" @submit.prevent="addNewTask()">
-                        <input type="text" name="newTaskInput" placeholder="Inserisci elemento..." v-model="newTask">
+                        <input type="text" name="newTaskInput" placeholder="Inserisci elemento..." v-model="newTask.taskName">
 
                         <button type="submit">Inserisci</button>
                     </form>

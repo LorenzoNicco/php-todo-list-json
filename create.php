@@ -1,7 +1,6 @@
 <?php
-    header('Content-Type: application/json');
 
-    $databaseContentCoded = file_get_contents('./database.json');
+    $databaseContentCoded = file_get_contents('./backup.json');
     $tasks = json_decode($databaseContentCoded, true);
 
     $tasks[] = [
@@ -10,7 +9,7 @@
     ];
 
     $tasksEncoded = json_encode($tasks);
-    file_put_contents('./database.json', $tasksEncoded);
+    file_put_contents('./backup.json', $tasksEncoded);
 
     $response = [
         'success' => true,
@@ -19,5 +18,6 @@
         'tasks' => $tasks
     ];
 
+    header('Content-Type: application/json');
     echo json_encode($response);
 ?>
