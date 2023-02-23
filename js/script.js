@@ -32,7 +32,14 @@ createApp ({
                 }
             })
             .then((response) => {
-                console.log(this.newTask);
+                console.log(response);
+
+                this.taskList = [];
+            
+                for (let i = 0; i < response.data.tasks.length; i++) {
+                    this.taskList.push(response.data.tasks[i]);
+                }
+                console.log(this.taskList);
             });
         }
     },
