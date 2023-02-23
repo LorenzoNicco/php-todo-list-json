@@ -34,6 +34,9 @@ ul {
 
 li {
     line-height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 li:not(:last-child) {
@@ -42,6 +45,13 @@ li:not(:last-child) {
 
 li > span {
     cursor: pointer;
+}
+
+li > button {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
 }
 
 .done {

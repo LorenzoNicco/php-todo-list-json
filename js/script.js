@@ -5,6 +5,7 @@ createApp ({
         return {
             apiUrl: "./script.php",
             createUrl: "./create.php",
+            deleteUrl: "./delete.php",
             taskList: [],
             newTask: {
                 taskName: "",
@@ -40,6 +41,29 @@ createApp ({
                     this.taskList.push(response.data.tasks[i]);
                 }
                 console.log(this.taskList);
+            });
+        },
+
+        deleteTask(index) {
+            const taskListUpdated = this.taskList.splice(index, 1);
+            console.log("tasklistupdated", taskListUpdated);
+
+            axios.post(this.deleteUrl, {
+                deletedTask: taskListUpdated
+            }, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then((response) => {
+                console.log(response);
+
+                this.taskList = [];
+            
+                for (let i = 0; i < response.data.tasks.length; i++) {
+                    this.taskList.push(response.data.tasks[i]);
+                }
+                console.log("tasklist dopo cancellazione",this.taskList);
             });
         }
     },
