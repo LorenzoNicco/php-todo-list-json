@@ -8,8 +8,7 @@ createApp ({
             deleteUrl: "./delete.php",
             taskList: [],
             newTask: {
-                taskName: "",
-                status: false
+                taskName: ""
             }
         }
     },
@@ -35,11 +34,8 @@ createApp ({
             .then((response) => {
                 console.log(response);
 
-                this.taskList = [];
+                this.taskList = response.data.tasks;
             
-                for (let i = 0; i < response.data.tasks.length; i++) {
-                    this.taskList.push(response.data.tasks[i]);
-                }
                 console.log(this.taskList);
             });
         },
@@ -56,11 +52,8 @@ createApp ({
             .then((response) => {
                 console.log(response);
 
-                this.taskList = [];
-            
-                for (let i = 0; i < response.data.tasks.length; i++) {
-                    this.taskList.push(response.data.tasks[i]);
-                }
+                this.taskList = response.data.tasks;
+                
                 console.log("tasklist dopo cancellazione",this.taskList);
             });
         }

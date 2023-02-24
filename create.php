@@ -5,7 +5,7 @@
 
     $tasks[] = [
         "taskName" => $_POST['newTask']['taskName'],
-        "status" => $_POST['newTask']['status']
+        "status" => false
     ];
 
     $tasksEncoded = json_encode($tasks);
