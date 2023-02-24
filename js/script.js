@@ -6,6 +6,7 @@ createApp ({
             apiUrl: "./script.php",
             createUrl: "./create.php",
             deleteUrl: "./delete.php",
+            updateUrl: "./update.php",
             taskList: [],
             newTask: {
                 taskName: ""
@@ -13,13 +14,23 @@ createApp ({
         }
     },
     methods: {
-        taskDone(task) {
-            if (task.status == false) {
-                return task.status = true;
-            }
-            else if (task.status == true) {
-                return task.status = false;
-            }
+        taskDone(index) {
+            const updateIndex = index;
+
+            axios.post(this.updateUrl, {
+                indexTarget: updateIndex
+            }, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            .then((response) => {
+                console.log("update response",response);
+
+                this.taskList[index].status = response.data.tasks[index].status;
+            
+                console.log("update tasklist", this.taskList);
+            })
         },
 
         addNewTask() {
@@ -32,11 +43,11 @@ createApp ({
                 }
             })
             .then((response) => {
-                console.log(response);
+                console.log("add response", response);
 
                 this.taskList = response.data.tasks;
             
-                console.log(this.taskList);
+                console.log("add tasklist", this.taskList);
             });
         },
 
@@ -50,11 +61,11 @@ createApp ({
                 }
             })
             .then((response) => {
-                console.log(response);
+                console.log("delete response", response);
 
                 this.taskList = response.data.tasks;
                 
-                console.log("tasklist dopo cancellazione",this.taskList);
+                console.log("delete tasklist",this.taskList);
             });
         }
     },
@@ -62,12 +73,12 @@ createApp ({
         axios
         .get(this.apiUrl)
         .then((response) => {
-            console.log(response);
+            console.log("read response", response);
             
             for (let i = 0; i < response.data.tasks.length; i++) {
                 this.taskList.push(response.data.tasks[i]);
             }
-            console.log(this.taskList);
+            console.log("read tasklist", this.taskList);
         });
     }
 }).mount('#app');

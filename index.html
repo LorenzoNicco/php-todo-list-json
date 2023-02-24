@@ -19,7 +19,7 @@
 
                     <ul>
                         <li v-for="(task, index) in taskList">
-                            <span v-on:click="taskDone(task)" v-bind:class="{'done':task.status == true}">{{ task.taskName }}</span>
+                            <span v-on:click="taskDone(index)" v-bind:class="{'done':task.status == true}">{{ task.taskName }}</span>
 
                             <button @click="deleteTask(index)">
                                 <i class="fa-solid fa-trash"></i>
