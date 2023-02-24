@@ -3,7 +3,7 @@
     $tasks = json_decode($databaseContentCoded, true);
 
     // sostituire con la cancellazione
-    $tasks = $_POST['deletedTask'];
+    $deletedIndex = array_splice($tasks, $_POST['deletedTask'],1);
 
     $tasksEncoded = json_encode($tasks);
     file_put_contents('./backup.json', $tasksEncoded);
